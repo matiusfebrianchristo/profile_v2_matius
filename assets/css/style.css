@@ -1,0 +1,62 @@
+:root {
+    --color-primary: #124191;
+    /* --color-secondary: #EEF0F8;
+    --color-accent: #374151;
+    --color-background: #FFFFFF;
+    --color-text: #374151; */
+}
+
+body { font-family: 'Lato', system-ui, sans-serif; }
+
+/* Navbar setelah hero lewat: menempel + slide turun */
+#navbar.is-fixed {
+    position: fixed;
+    background: rgba(238, 240, 248, .85);
+    -webkit-backdrop-filter: blur(16px);
+    backdrop-filter: blur(16px);
+    border-bottom: 1px solid rgba(255, 255, 255, .6);
+    animation: navSlideDown .3s ease-out;
+}
+.nav-link {
+    transition: color 0.2s;
+}
+.nav-link:hover,
+.nav-link.active {
+    color: var(--color-primary);
+}
+
+.reveal {
+    opacity: 0;
+}
+.reveal.show {
+    animation: fade-up 1s ease-out forwards;
+    animation-delay: var(--delay, 0ms);
+}
+
+
+@keyframes navSlideDown {
+    from { transform: translateY(-100%); }
+    to { transform: translateY(0); }
+}
+@media (prefers-reduced-motion: reduce) {
+    #navbar.is-fixed { animation: none; }
+    .reveal {
+        opacity: 1;
+    }
+    .reveal.show {
+        animation: none;
+    }
+}
+
+
+@keyframes fade-up {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+

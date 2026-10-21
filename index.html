@@ -16,15 +16,23 @@
 
 <body class="bg-[#EEF0F8] text-[#374151]">
 
-    <!-- Navbar: di hero ikut ter-scroll, mulai section kedua menempel di atas -->
-    <nav id="navbar" class="absolute top-0 inset-x-0 z-30 flex flex-col sm:flex-row items-center justify-between gap-1 sm:gap-3 px-6 md:px-12 py-3">
+    <nav id="navbar" class="absolute top-0 inset-x-0 z-30 flex items-center justify-between gap-3 px-6 md:px-12 py-3">
         <img src="assets/images/logo.svg" alt="Logo" class="h-9 w-9">
-        <ul class="flex flex-wrap justify-center gap-x-5 md:gap-x-8 gap-y-1 text-[11px] font-bold tracking-widest uppercase">
+
+        <!-- FOR MOBILE -->
+        <button id="menu-btn" type="button" aria-label="Toggle menu" aria-expanded="false" aria-controls="menu"
+            class="sm:hidden grid h-10 w-10 place-items-center rounded-md text-[#2B2F3A] hover:text-(--color-primary) transition-colors">
+            <i class="fa fa-bars text-xl"></i>
+        </button>
+
+        <ul id="menu"
+            class="hidden sm:flex absolute sm:static top-full inset-x-0 flex-col sm:flex-row items-center gap-y-4 sm:gap-y-1 sm:gap-x-5 md:gap-x-8 py-6 sm:py-0 bg-[#EEF0F8] sm:bg-transparent shadow-lg sm:shadow-none border-t border-white/60 sm:border-0 text-xs sm:text-[11px] font-bold tracking-widest uppercase">
             <li><a href="#home" class="nav-link">Home</a></li>
             <li><a href="#skills" class="nav-link">Skills</a></li>
             <li><a href="#experience" class="nav-link">Experience</a></li>
             <li><a href="#certificate" class="nav-link">Certificates</a></li>
         </ul>
+
         <div class="hidden sm:block w-9"></div>
     </nav>
 
@@ -35,41 +43,32 @@
         <div class="absolute -top-10 left-1/3 w-56 h-56 rounded-full bg-white/70 blur-2xl"></div>
         <div class="absolute bottom-10 left-10 w-40 h-40 rounded-full bg-white/80 blur-2xl"></div>
 
-        <!-- Isi hero: 2 kolom (teks kiri, foto kanan) -->
         <div class="relative z-10 container mx-auto px-6 md:px-12 grid md:grid-cols-2 items-center gap-8 min-h-screen pt-28 md:pt-20 pb-16 md:pb-0">
 
-            <!-- Kiri: teks -->
             <div class="order-2 md:order-1 text-center md:text-left">
                 <div class="flex items-center justify-center md:justify-start gap-3 mb-4">
                     <span class="w-8 h-px bg-gray-400"></span>
                     <span class="text-[11px] font-bold tracking-widest uppercase">Hello</span>
                 </div>
-
                 <h1 class="text-4xl lg:text-5xl font-black leading-tight text-[#2B2F3A]">
                     I'm <span class="text-(--color-primary)">Matius</span> Febrian Christo
                 </h1>
-
                 <p class="mt-5 text-sm leading-relaxed text-gray-600 max-w-md mx-auto md:mx-0">
                     Technical and Maintenance Support Engineer from Blitar, East Java, Indonesia. 
                 </p>
-
                 <a href="docs/CV-Matius_Febrian_Christo.pdf" download
                     class="inline-block mt-8 bg-(--color-primary) hover:bg-indigo-700 text-white text-[11px] font-bold tracking-widest uppercase px-7 py-3 rounded-sm transition-colors">
                     Download CV
                 </a>
             </div>
-
-            <!-- Kanan: foto + goresan kuas -->
+            
             <div class="order-1 md:order-2 relative flex justify-center items-end h-80 sm:h-96 md:h-[34rem]">
-                <!-- Goresan kuas (SVG) di belakang foto -->
                 <svg viewBox="0 0 400 400" class="absolute max-w-full inset-0 m-auto h-full w-auto text-gray-300" fill="currentColor"
                     aria-hidden="true">
                     <path d="M60 90 L120 60 L150 70 L210 40 L260 55 L330 50 L350 90 L335 130 L355 170 L340 215
                              L360 260 L335 300 L345 340 L290 355 L240 340 L190 360 L140 345 L95 355 L70 315
                              L85 270 L55 235 L75 190 L50 150 L70 120 Z" />
                 </svg>
-
-                <!-- Foto: idealnya PNG tanpa background (cutout) supaya menyatu dengan goresan -->
                 <img src="assets/images/profile.png" alt="Matius Febrian Christo"
                     class="relative h-full w-auto max-w-full object-contain rounded-2xl md:rounded-none drop-shadow-xl">
             </div>
@@ -100,155 +99,136 @@
     </section> -->
 
     <!-- Section berikutnya (About, Skills, dst.) taruh di bawah sini -->
+
+
     <!-- <section id="skills" class="relative min-h-screen overflow-hidden text-center bg-[#e1e4eb]">
         <h1 class="mt-30 text-4xl lg:text-5xl font-black leading-tight text-[#2B2F3A]">What Can I Do?</h1>
         <div class="flex items-center justify-center text-gray-400 mt-20">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-10 p-6 w-full max-w-6xl">
-                <div class="rounded-2xl bg-white p-6 shadow-md w-">
-                    <h3 class="text-lg font-semibold">Card 1</h3>
-                    <p class="mt-2 text-gray-600">Description here.</p>
-                </div>
-    
-                <div class="rounded-2xl bg-white p-6 shadow-md">
-                    <h3 class="text-lg font-semibold">Card 2</h3>
-                    <p class="mt-2 text-gray-600">Description here.</p>
-                </div>
-    
-                <div class="rounded-2xl bg-white p-6 shadow-md">
-                    <h3 class="text-lg font-semibold">Card 3</h3>
-                    <p class="mt-2 text-gray-600">Description here.</p>
-                </div>
-    
-                <div class="rounded-2xl bg-white p-6 shadow-md ">
-                    <h3 class="text-lg font-semibold">Card 1</h3>
-                    <p class="mt-2 text-gray-600">Description here.</p>
-                </div>
-    
-                <div class="rounded-2xl bg-white p-6 shadow-md">
-                    <h3 class="text-lg font-semibold">Card 2</h3>
-                    <p class="mt-2 text-gray-600">Description here.</p>
-                </div>
-    
-                <div class="rounded-2xl bg-white p-6 shadow-md">
-                    <h3 class="text-lg font-semibold">Card 3</h3>
-                    <p class="mt-2 text-gray-600">Description here.</p>
-                </div>
-            </div>
+ 
         </div>
     </section> -->
-<!-- ===== SKILLS ===== -->
-<section id="skills" class="relative min-h-screen overflow-hidden text-center bg-linear-to-b from-[#e1e4eb] to-[#eef0f8] pb-24">
+    <!-- ===== SECTION SKILLS ===== -->
+    <section id="skills" class="relative min-h-screen overflow-hidden text-center bg-linear-to-b from-[#e1e4eb] to-[#eef0f8] pb-24">
 
-    <!-- Decorative blobs -->
-    <div class="pointer-events-none absolute -top-20 -left-20 h-80 w-80 rounded-full bg-blue-300/30 blur-3xl"></div>
-    <div class="pointer-events-none absolute bottom-0 -right-20 h-96 w-96 rounded-full bg-teal-300/30 blur-3xl"></div>
+        <!-- Decorative blobs -->
+        <div class="pointer-events-none absolute -top-20 -left-20 h-80 w-80 rounded-full bg-blue-300/30 blur-3xl"></div>
+        <div class="pointer-events-none absolute bottom-0 -right-20 h-96 w-96 rounded-full bg-teal-300/30 blur-3xl"></div>
 
-    <!-- Faint dot grid -->
-    <div class="pointer-events-none absolute inset-0 opacity-10 [background-image:radial-gradient(#124191_1px,transparent_1px)] [background-size:24px_24px] [mask-image:linear-gradient(to_bottom,black,transparent_70%)]"></div>
+        <!-- Faint dot grid -->
+        <div class="pointer-events-none absolute inset-0 opacity-10 [background-image:radial-gradient(#124191_1px,transparent_1px)] [background-size:24px_24px] [mask-image:linear-gradient(to_bottom,black,transparent_70%)]"></div>
 
-    <div class="relative z-10">
-        <!-- <h2 class="mt-17 text-4xl lg:text-5xl font-black leading-tight text-[#2B2F3A]">What Can I Do?</h2> -->
+        <div class="relative z-10">
+            <!-- <h2 class="mt-17 text-4xl lg:text-5xl font-black leading-tight text-[#2B2F3A]">What Can I Do?</h2> -->
 
-        <div class="flex flex-col items-center justify-center mt-30 gap-14">
+            <div class="flex flex-col items-center justify-center mt-30 gap-14">
 
-            <!-- PROGRAMMING -->
-            <div class="w-full max-w-6xl px-6">
-                <h3 class="mb-6 text-left text-xs font-bold tracking-widest uppercase text-(--color-primary)">Programming</h3>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+                <!-- PROGRAMMING -->
+                <div class="w-full max-w-6xl px-6">
+                    <h3 class="mb-6 text-left text-xs font-bold tracking-widest uppercase text-(--color-primary)">Programming</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
 
-                    <!-- Web Development -->
-                    <div class="group text-left rounded-2xl bg-white p-6 shadow-md transition duration-300 hover:-translate-y-2 hover:shadow-xl hover:shadow-blue-300/60">
-                        <div class="mb-4 grid h-12 w-12 place-items-center rounded-xl bg-linear-to-br from-blue-600 to-indigo-500 text-white shadow-lg shadow-blue-400/40 transition group-hover:scale-110">
-                            <svg class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="m16 18 6-6-6-6M8 6l-6 6 6 6"/></svg>
+                        <!-- Web Development -->
+                        <div class="group text-left rounded-2xl bg-white p-6 shadow-md transition duration-300 hover:-translate-y-2 hover:shadow-xl hover:shadow-blue-300/60">
+                            <div class="mb-4 grid h-12 w-12 place-items-center rounded-xl bg-linear-to-br from-blue-600 to-indigo-500 text-white shadow-lg shadow-blue-400/40 transition group-hover:scale-110">
+                                <svg class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="m16 18 6-6-6-6M8 6l-6 6 6 6"/></svg>
+                            </div>
+                            <h3 class="text-lg font-bold text-[#2B2F3A]">Web Development</h3>
+                            <p class="mt-2 text-sm text-gray-600">Responsive, fast, and clean user interfaces.</p>
+                            <div class="mt-4 flex flex-wrap gap-2 text-[11px] font-semibold">
+                                <span class="rounded-full bg-blue-100 px-2.5 py-1 text-blue-700">HTML</span>
+                                <span class="rounded-full bg-blue-100 px-2.5 py-1 text-blue-700">Tailwind</span>
+                                <span class="rounded-full bg-blue-100 px-2.5 py-1 text-blue-700">JavaScript</span>
+                            </div>
                         </div>
-                        <h3 class="text-lg font-bold text-[#2B2F3A]">Web Development</h3>
-                        <p class="mt-2 text-sm text-gray-600">Responsive, fast, and clean user interfaces.</p>
-                        <div class="mt-4 flex flex-wrap gap-2 text-[11px] font-semibold">
-                            <span class="rounded-full bg-blue-100 px-2.5 py-1 text-blue-700">HTML</span>
-                            <span class="rounded-full bg-blue-100 px-2.5 py-1 text-blue-700">Tailwind</span>
-                            <span class="rounded-full bg-blue-100 px-2.5 py-1 text-blue-700">JavaScript</span>
-                        </div>
-                    </div>
 
-                    <!-- Backend -->
-                    <div class="group text-left rounded-2xl bg-white p-6 shadow-md transition duration-300 hover:-translate-y-2 hover:shadow-xl hover:shadow-indigo-300/60">
-                        <div class="mb-4 grid h-12 w-12 place-items-center rounded-xl bg-linear-to-br from-indigo-500 to-violet-500 text-white shadow-lg shadow-indigo-400/40 transition group-hover:scale-110">
-                            <svg class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="m4 17 6-6-6-6M12 19h8"/></svg>
+                        <!-- Backend -->
+                        <div class="group text-left rounded-2xl bg-white p-6 shadow-md transition duration-300 hover:-translate-y-2 hover:shadow-xl hover:shadow-indigo-300/60">
+                            <div class="mb-4 grid h-12 w-12 place-items-center rounded-xl bg-linear-to-br from-indigo-500 to-violet-500 text-white shadow-lg shadow-indigo-400/40 transition group-hover:scale-110">
+                                <svg class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="m4 17 6-6-6-6M12 19h8"/></svg>
+                            </div>
+                            <h3 class="text-lg font-bold text-[#2B2F3A]">Backend</h3>
+                            <p class="mt-2 text-sm text-gray-600">APIs and server-side logic that just works.</p>
+                            <div class="mt-4 flex flex-wrap gap-2 text-[11px] font-semibold">
+                                <span class="rounded-full bg-indigo-100 px-2.5 py-1 text-indigo-700">PHP</span>
+                                <span class="rounded-full bg-indigo-100 px-2.5 py-1 text-indigo-700">Node.js</span>
+                                <span class="rounded-full bg-indigo-100 px-2.5 py-1 text-indigo-700">REST API</span>
+                            </div>
                         </div>
-                        <h3 class="text-lg font-bold text-[#2B2F3A]">Backend</h3>
-                        <p class="mt-2 text-sm text-gray-600">APIs and server-side logic that just works.</p>
-                        <div class="mt-4 flex flex-wrap gap-2 text-[11px] font-semibold">
-                            <span class="rounded-full bg-indigo-100 px-2.5 py-1 text-indigo-700">PHP</span>
-                            <span class="rounded-full bg-indigo-100 px-2.5 py-1 text-indigo-700">Node.js</span>
-                            <span class="rounded-full bg-indigo-100 px-2.5 py-1 text-indigo-700">REST API</span>
-                        </div>
-                    </div>
 
-                    <!-- Database -->
-                    <div class="group text-left rounded-2xl bg-white p-6 shadow-md transition duration-300 hover:-translate-y-2 hover:shadow-xl hover:shadow-sky-300/60">
-                        <div class="mb-4 grid h-12 w-12 place-items-center rounded-xl bg-linear-to-br from-sky-500 to-blue-500 text-white shadow-lg shadow-sky-400/40 transition group-hover:scale-110">
-                            <svg class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14a9 3 0 0 0 18 0V5"/><path d="M3 12a9 3 0 0 0 18 0"/></svg>
-                        </div>
-                        <h3 class="text-lg font-bold text-[#2B2F3A]">Database</h3>
-                        <p class="mt-2 text-sm text-gray-600">Structured data design and efficient queries.</p>
-                        <div class="mt-4 flex flex-wrap gap-2 text-[11px] font-semibold">
-                            <span class="rounded-full bg-sky-100 px-2.5 py-1 text-sky-700">MySQL</span>
-                            <span class="rounded-full bg-sky-100 px-2.5 py-1 text-sky-700">PostgreSQL</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- NETWORKING -->
-            <div class="w-full max-w-6xl px-6">
-                <h3 class="mb-6 text-left text-xs font-bold tracking-widest uppercase text-teal-600">Networking</h3>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
-
-                    <!-- Network Configuration -->
-                    <div class="group text-left rounded-2xl bg-white p-6 shadow-md transition duration-300 hover:-translate-y-2 hover:shadow-xl hover:shadow-teal-300/60">
-                        <div class="mb-4 grid h-12 w-12 place-items-center rounded-xl bg-linear-to-br from-teal-400 to-emerald-500 text-white shadow-lg shadow-teal-400/40 transition group-hover:scale-110">
-                            <svg class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><rect x="9" y="2" width="6" height="6" rx="1"/><rect x="2" y="16" width="6" height="6" rx="1"/><rect x="16" y="16" width="6" height="6" rx="1"/><path d="M12 8v4M5 16v-4h14v4"/></svg>
-                        </div>
-                        <h3 class="text-lg font-bold text-[#2B2F3A]">Network Configuration</h3>
-                        <p class="mt-2 text-sm text-gray-600">Routing, switching, and VLAN setup.</p>
-                        <div class="mt-4 flex flex-wrap gap-2 text-[11px] font-semibold">
-                            <span class="rounded-full bg-teal-100 px-2.5 py-1 text-teal-700">FTTH</span>
-                            <span class="rounded-full bg-teal-100 px-2.5 py-1 text-teal-700">Mikrotik</span>
-                            <span class="rounded-full bg-teal-100 px-2.5 py-1 text-teal-700">Router Multibrand</span>
-                        </div>
-                    </div>
-
-                    <!-- Network Security -->
-                    <!-- <div class="group text-left rounded-2xl bg-white p-6 shadow-md transition duration-300 hover:-translate-y-2 hover:shadow-xl hover:shadow-emerald-300/60">
-                        <div class="mb-4 grid h-12 w-12 place-items-center rounded-xl bg-linear-to-br from-emerald-500 to-green-500 text-white shadow-lg shadow-emerald-400/40 transition group-hover:scale-110">
-                            <svg class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-                        </div>
-                        <h3 class="text-lg font-bold text-[#2B2F3A]">Network Security</h3>
-                        <p class="mt-2 text-sm text-gray-600">Protecting traffic, access, and devices.</p>
-                        <div class="mt-4 flex flex-wrap gap-2 text-[11px] font-semibold">
-                            <span class="rounded-full bg-emerald-100 px-2.5 py-1 text-emerald-700">Firewall</span>
-                            <span class="rounded-full bg-emerald-100 px-2.5 py-1 text-emerald-700">VPN</span>
-                        </div>
-                    </div> -->
-
-                    <!-- Server & Cloud -->
-                    <div class="group text-left rounded-2xl bg-white p-6 shadow-md transition duration-300 hover:-translate-y-2 hover:shadow-xl hover:shadow-cyan-300/60">
-                        <div class="mb-4 grid h-12 w-12 place-items-center rounded-xl bg-linear-to-br from-cyan-500 to-teal-500 text-white shadow-lg shadow-cyan-400/40 transition group-hover:scale-110">
-                            <svg class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="8" rx="2"/><rect x="2" y="14" width="20" height="8" rx="2"/><path d="M6 6h.01M6 18h.01"/></svg>
-                        </div>
-                        <h3 class="text-lg font-bold text-[#2B2F3A]">Server &amp; Cloud</h3>
-                        <p class="mt-2 text-sm text-gray-600">Linux servers, deployment, and monitoring.</p>
-                        <div class="mt-4 flex flex-wrap gap-2 text-[11px] font-semibold">
-                            <span class="rounded-full bg-cyan-100 px-2.5 py-1 text-cyan-700">Linux</span>
-                            <span class="rounded-full bg-cyan-100 px-2.5 py-1 text-cyan-700">Ubuntu</span>
+                        <!-- Database -->
+                        <div class="group text-left rounded-2xl bg-white p-6 shadow-md transition duration-300 hover:-translate-y-2 hover:shadow-xl hover:shadow-sky-300/60">
+                            <div class="mb-4 grid h-12 w-12 place-items-center rounded-xl bg-linear-to-br from-sky-500 to-blue-500 text-white shadow-lg shadow-sky-400/40 transition group-hover:scale-110">
+                                <svg class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14a9 3 0 0 0 18 0V5"/><path d="M3 12a9 3 0 0 0 18 0"/></svg>
+                            </div>
+                            <h3 class="text-lg font-bold text-[#2B2F3A]">Database</h3>
+                            <p class="mt-2 text-sm text-gray-600">Structured data design and efficient queries.</p>
+                            <div class="mt-4 flex flex-wrap gap-2 text-[11px] font-semibold">
+                                <span class="rounded-full bg-sky-100 px-2.5 py-1 text-sky-700">MySQL</span>
+                                <span class="rounded-full bg-sky-100 px-2.5 py-1 text-sky-700">PostgreSQL</span>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
 
+                <!-- NETWORKING -->
+                <div class="w-full max-w-6xl px-6">
+                    <h3 class="mb-6 text-left text-xs font-bold tracking-widest uppercase text-teal-600">Networking</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+
+                        <!-- Network Configuration -->
+                        <div class="group text-left rounded-2xl bg-white p-6 shadow-md transition duration-300 hover:-translate-y-2 hover:shadow-xl hover:shadow-teal-300/60">
+                            <div class="mb-4 grid h-12 w-12 place-items-center rounded-xl bg-linear-to-br from-teal-400 to-emerald-500 text-white shadow-lg shadow-teal-400/40 transition group-hover:scale-110">
+                                <svg class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><rect x="9" y="2" width="6" height="6" rx="1"/><rect x="2" y="16" width="6" height="6" rx="1"/><rect x="16" y="16" width="6" height="6" rx="1"/><path d="M12 8v4M5 16v-4h14v4"/></svg>
+                            </div>
+                            <h3 class="text-lg font-bold text-[#2B2F3A]">Network Configuration</h3>
+                            <p class="mt-2 text-sm text-gray-600">Routing, switching, and VLAN setup.</p>
+                            <div class="mt-4 flex flex-wrap gap-2 text-[11px] font-semibold">
+                                <span class="rounded-full bg-teal-100 px-2.5 py-1 text-teal-700">FTTH</span>
+                                <span class="rounded-full bg-teal-100 px-2.5 py-1 text-teal-700">Mikrotik</span>
+                                <span class="rounded-full bg-teal-100 px-2.5 py-1 text-teal-700">Router Multibrand</span>
+                            </div>
+                        </div>
+
+                        <!-- Network Security -->
+                        <!-- <div class="group text-left rounded-2xl bg-white p-6 shadow-md transition duration-300 hover:-translate-y-2 hover:shadow-xl hover:shadow-emerald-300/60">
+                            <div class="mb-4 grid h-12 w-12 place-items-center rounded-xl bg-linear-to-br from-emerald-500 to-green-500 text-white shadow-lg shadow-emerald-400/40 transition group-hover:scale-110">
+                                <svg class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                            </div>
+                            <h3 class="text-lg font-bold text-[#2B2F3A]">Network Security</h3>
+                            <p class="mt-2 text-sm text-gray-600">Protecting traffic, access, and devices.</p>
+                            <div class="mt-4 flex flex-wrap gap-2 text-[11px] font-semibold">
+                                <span class="rounded-full bg-emerald-100 px-2.5 py-1 text-emerald-700">Firewall</span>
+                                <span class="rounded-full bg-emerald-100 px-2.5 py-1 text-emerald-700">VPN</span>
+                            </div>
+                        </div> -->
+
+                        <!-- Server & Cloud -->
+                        <div class="group text-left rounded-2xl bg-white p-6 shadow-md transition duration-300 hover:-translate-y-2 hover:shadow-xl hover:shadow-cyan-300/60">
+                            <div class="mb-4 grid h-12 w-12 place-items-center rounded-xl bg-linear-to-br from-cyan-500 to-teal-500 text-white shadow-lg shadow-cyan-400/40 transition group-hover:scale-110">
+                                <svg class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="8" rx="2"/><rect x="2" y="14" width="20" height="8" rx="2"/><path d="M6 6h.01M6 18h.01"/></svg>
+                            </div>
+                            <h3 class="text-lg font-bold text-[#2B2F3A]">Server &amp; Cloud</h3>
+                            <p class="mt-2 text-sm text-gray-600">Linux servers, deployment, and monitoring.</p>
+                            <div class="mt-4 flex flex-wrap gap-2 text-[11px] font-semibold">
+                                <span class="rounded-full bg-cyan-100 px-2.5 py-1 text-cyan-700">Linux</span>
+                                <span class="rounded-full bg-cyan-100 px-2.5 py-1 text-cyan-700">Ubuntu</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
         </div>
-    </div>
-</section>
+    </section>
+    <!-- ===== END SECTION SKILLS ===== -->
+
+    <!-- ===== SECTION EXPERIENCE ===== -->
+    <section id="experience" class="relative min-h-screen overflow-hidden text-center bg-[#e1e4eb]">
+        <h1 class="mt-30 text-4xl lg:text-5xl font-black leading-tight text-[#2B2F3A]">My Experience</h1>
+        <div class="flex items-center justify-center text-gray-400 mt-20">
+ 
+        </div>
+    </section>
 
 
     <script src="assets/js/script.js"></script>
